@@ -1,6 +1,11 @@
- (ns pubsub.test-sources
+ (ns pubsub.success-test
    (:require [cljs.test :refer-macros [deftest is testing run-tests]]
              [pubsub.feeds :as ps]))
 
- (deftest test-numbers
+(enable-console-print!)
+
+
+(deftest test-numbers
    (is (= 1 1)))
+
+ (run-tests)

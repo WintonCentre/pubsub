@@ -21,7 +21,7 @@ page.open(url, function (status) {
   }
 
   page.evaluate(function() {
-    cljs.my_namespaced_app.test.run();
+    //pubsub.test_runner.run();
   });
 
   setTimeout(function() { // https://github.com/ariya/phantomjs/issues/12697

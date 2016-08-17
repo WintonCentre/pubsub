@@ -8,7 +8,13 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.8.51"]
+                 [org.clojure/core.async "0.2.385"]
                  ]
+
+  :plugins [[lein-cljsbuild "1.1.3"]
+            [lein-midje "3.2"]]
+
+  ;:test-paths ["test/pubsub"]
 
   :cljsbuild {:builds {:minify {:source-paths ["src"]
                                 :compiler {:output-to "resources/public/js/main.js"
