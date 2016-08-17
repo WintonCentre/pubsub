@@ -55,3 +55,4 @@ resources/public/faq*
 resources/public/home*
 resources/public/index*
 resources/public/intro*
+/resources/public/js/main-test.js
