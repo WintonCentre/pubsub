@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pubsub.iml" filepath="$PROJECT_DIR$/pubsub.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rcljs-widgets.iml" filepath="$PROJECT_DIR$/rcljs-widgets.iml" />
     </modules>
   </component>
 </project>
