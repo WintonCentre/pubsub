@@ -6,7 +6,6 @@
 
 ```
 npm install -g phantomjs
-lein deps  # <- may not be needed
 lein cljsbuild once test
 ```
 
