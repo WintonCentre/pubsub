@@ -7,8 +7,12 @@
   :min-lein-version "2.5.3"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.8.51"]
-                 ]
+                 [org.clojure/clojurescript "1.8.51"]]
+
+  :plugins [[lein-cljsbuild "1.1.3"]
+            [lein-doo "0.1.7"]]
+
+  :source-paths ["src" "test" "failing-tests"]
 
   :cljsbuild {:builds {:minify {:source-paths ["src"]
                                 :compiler {:output-to "resources/public/js/main.js"
