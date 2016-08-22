@@ -1,8 +1,8 @@
 (ns pubsubcards.core
-    (:require
-     [rum.core :as rum]
-     [cljs.test :as t]
-     ))
+  (:require
+    [rum.core :as rum]
+    [cljs.test :as t]
+    ))
 
 (enable-console-print!)
 
