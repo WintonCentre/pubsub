@@ -36,7 +36,7 @@
         (let [[topic-key message] (<! in-chan)]
           (if (= message :close)
             (do
-              (close! (:input feed))
+              ;(close! (:input feed))
               (close! in-chan))
             (do
               (handler topic-key message)

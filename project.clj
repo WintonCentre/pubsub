@@ -22,14 +22,7 @@
   :source-paths ["src"]
 
   :cljsbuild {
-              :builds [{:id "dev"
-                        :source-paths ["src"]
-                        :figwheel true
-                        :compiler {:main       "examples.logging"
-                                   :asset-path "js/compiled/out"
-                                   :output-to  "resources/public/js/compiled/examples_logging.js"
-                                   :output-dir "resources/public/js/compiled/out"
-                                   :source-map-timestamp true}}
+              :builds [
                        {:id "devcards"
                         :source-paths ["src"]
                         :figwheel { :devcards true } ;; <- note this
@@ -38,6 +31,14 @@
                                    :output-to  "resources/public/js/compiled/pubsubcards_devcards.js"
                                    :output-dir "resources/public/js/compiled/devcards_out"
                                    :source-map-timestamp true }}
+                       {:id "dev"
+                        :source-paths ["src"]
+                        :figwheel true
+                        :compiler {:main       "examples.logging"
+                                   :asset-path "js/compiled/out"
+                                   :output-to  "resources/public/js/compiled/examples_logging.js"
+                                   :output-dir "resources/public/js/compiled/out"
+                                   :source-map-timestamp true}}
 
                        ]}
 
