@@ -1,19 +1,19 @@
 (ns pubsubcards.devcards
-  (:require [rum.core :as rum]
-            [cljs.test :as t :refer-macros [is testing async]]
+  (:require
+            [cljs.test :refer-macros [is testing async]]
             [pubsubcards.core :as core]
             [pubsub.feeds :as feeds]
             [cljs.core.async :refer [<! timeout close!]]
+            [devcards.core :refer-macros [defcard deftest]]
             )
   (:require-macros
-    [devcards.core :as dc :refer [defcard deftest]]
     [cljs.core.async.macros :refer [go]]))
 
 (enable-console-print!)
 
 (def async-result (atom nil))
 
-(defcard first-card
+(defcard
   (core/rum-tester))
 
 (deftest read-write
