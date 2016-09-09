@@ -100,28 +100,19 @@
 
   (testing "close a feed"
     (let [feed (feeds/create-feed)
-          topic (feeds/->Topic :greetings feed)]
-      (letfn [(collect [key msg] (swap! async-result #(str %1
-                                                           (if (= %1 "") "" " | ")
-                                                           (str (name key) ": " msg))))]
-        (reset! async-result "")
-        (feeds/subscribe topic collect)
-        (feeds/publish topic "Hello there 1!")
-        (feeds/close topic feed)
-        )
-
-      (async done
-        (go
-          (<! (timeout 100))
-          (is (= @async-result "greetings: Hello there 1!") "close a feed")
-          (reset! async-result "")
-          (is (= @async-result "") "feed remains closed")
-          )
-        (go
-          (<! (timeout 200))
-          (done))
-        ))
-    )
+          topic (feeds/->Topic :closer feed)
+          store (fn [key msg] (reset! async-result [key msg]))]
+      (store nil nil)
+      (feeds/subscribe topic store)
+      (feeds/publish topic "Hello there!")
+      (feeds/unsubscribe topic)
+      (feeds/publish topic "This should not pass")
+      )
+    (async done
+      (go
+        (<! (timeout 100))
+        (is (= @async-result [:closer "Hello there!"]) "Unsubscribe means no more traffic on a subscription")
+        (done))))
   )
 
 (deftest pubsub-tests

@@ -1,4 +1,4 @@
-(defproject pubsub "0.1.1"
+(defproject pubsub "0.2.1"
   :description "A simple publish subscribe library with tests in devcards!"
   :url "http://github.com/gmp26/pubsub"
   :license {:name "Eclipse Public License"
