@@ -21,6 +21,7 @@
   "Close all topics on this feed, then close the channel.
   Do not re-use a feed once it has been closed. Instead, create a new one."
   (put! (:input feed) [:close "closing"])
+  ;; close! will allow the "closing" messages to be read before finally closing
   (close! (:input feed)))
 
 (defprotocol TopicFeed
